@@ -21,8 +21,6 @@ jobs:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Create venv by poetry init 
         run: poetry install
-      - name: Build python codes
-        run: poetry run make
       - name: Build 
         run: poetry build
 
