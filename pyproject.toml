@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "vstreamer-protos"
+version = "0.1.0"
+description = ""
+authors = ["sondeko <sondeko143@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "vstreamer_protos"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+protobuf = "^4.22.3"
+grpcio = "^1.54.0"
+
+[tool.poetry.group.dev.dependencies]
+grpcio-tools = "^1.54.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

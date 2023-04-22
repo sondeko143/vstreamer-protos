@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package voicerecog;
+
+service Commander {
+    rpc process_command (Command) returns (Response) {}
+}
+
+enum Operation {
+    TRANSCRIBE = 0;
+    TRANSLATE = 1;
+    SUBTITLE = 2;
+    SUBTITLE_TRANSLATED = 3;
+    SPEECH = 4;
+    PLAYBACK = 5;
+    PAUSE = 6;
+    RESUME = 7;
+    RELOAD = 8;
+    SET_FILTERS = 9;
+}
+
+message Command {
+    repeated Operation operations = 1;
+    oneof operand {
+        Sound sound = 2;
+        string text = 3;
+        string file_path = 4;
+    }
+    repeated string filters = 5;
+}
+
+message Sound {
+    bytes data = 1;
+    int32 rate = 2;
+}
+
+message Response {
+    bool result = 1;
+}
