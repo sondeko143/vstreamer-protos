@@ -1,5 +1,8 @@
 name: CI
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   ci:
@@ -23,4 +26,12 @@ jobs:
         run: poetry install
       - name: Build 
         run: poetry build
-
+      - uses: xresloader/upload-to-github-release@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          file: "dist/*.whl"
+          branches: "main;dev"
+          verbose: true
+          prerelease: true
+          default_release_name: "test"
