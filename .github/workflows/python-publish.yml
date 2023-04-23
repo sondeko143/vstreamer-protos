@@ -35,4 +35,4 @@ jobs:
           branches: "main;dev"
           verbose: true
           prerelease: true
-          default_release_name: "test"
+          tags: true
