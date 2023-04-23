@@ -6,6 +6,7 @@ on:
 
 jobs:
   ci:
+    permissions: write-all
     strategy:
       fail-fast: false
       matrix:
