@@ -13,21 +13,21 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*vstreamer_protos/commander/commander.proto\x12\nvoicerecog\"\x99\x01\n\x07\x43ommand\x12)\n\noperations\x18\x01 \x03(\x0e\x32\x15.voicerecog.Operation\x12\"\n\x05sound\x18\x02 \x01(\x0b\x32\x11.voicerecog.SoundH\x00\x12\x0e\n\x04text\x18\x03 \x01(\tH\x00\x12\x13\n\tfile_path\x18\x04 \x01(\tH\x00\x12\x0f\n\x07\x66ilters\x18\x05 \x03(\tB\t\n\x07operand\"#\n\x05Sound\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x0c\n\x04rate\x18\x02 \x01(\x05\"\x1a\n\x08Response\x12\x0e\n\x06result\x18\x01 \x01(\x08*\x9f\x01\n\tOperation\x12\x0e\n\nTRANSCRIBE\x10\x00\x12\r\n\tTRANSLATE\x10\x01\x12\x0c\n\x08SUBTITLE\x10\x02\x12\x17\n\x13SUBTITLE_TRANSLATED\x10\x03\x12\n\n\x06SPEECH\x10\x04\x12\x0c\n\x08PLAYBACK\x10\x05\x12\t\n\x05PAUSE\x10\x06\x12\n\n\x06RESUME\x10\x07\x12\n\n\x06RELOAD\x10\x08\x12\x0f\n\x0bSET_FILTERS\x10\t2K\n\tCommander\x12>\n\x0fprocess_command\x12\x13.voicerecog.Command\x1a\x14.voicerecog.Response\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*vstreamer_protos/commander/commander.proto\x12\nvoicerecog\"\x99\x01\n\x07\x43ommand\x12)\n\noperations\x18\x01 \x03(\x0e\x32\x15.voicerecog.Operation\x12\"\n\x05sound\x18\x02 \x01(\x0b\x32\x11.voicerecog.SoundH\x00\x12\x0e\n\x04text\x18\x03 \x01(\tH\x00\x12\x13\n\tfile_path\x18\x04 \x01(\tH\x00\x12\x0f\n\x07\x66ilters\x18\x05 \x03(\tB\t\n\x07operand\"E\n\x05Sound\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x0c\n\x04rate\x18\x02 \x01(\x05\x12\x0e\n\x06\x66ormat\x18\x03 \x01(\x05\x12\x10\n\x08\x63hannels\x18\x04 \x01(\x05\"\x1a\n\x08Response\x12\x0e\n\x06result\x18\x01 \x01(\x08*\x9f\x01\n\tOperation\x12\x0e\n\nTRANSCRIBE\x10\x00\x12\r\n\tTRANSLATE\x10\x01\x12\x0c\n\x08SUBTITLE\x10\x02\x12\x17\n\x13SUBTITLE_TRANSLATED\x10\x03\x12\n\n\x06SPEECH\x10\x04\x12\x0c\n\x08PLAYBACK\x10\x05\x12\t\n\x05PAUSE\x10\x06\x12\n\n\x06RESUME\x10\x07\x12\n\n\x06RELOAD\x10\x08\x12\x0f\n\x0bSET_FILTERS\x10\t2K\n\tCommander\x12>\n\x0fprocess_command\x12\x13.voicerecog.Command\x1a\x14.voicerecog.Response\"\x00\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'vstreamer_protos.commander.commander_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _OPERATION._serialized_start=280
-  _OPERATION._serialized_end=439
+  _OPERATION._serialized_start=314
+  _OPERATION._serialized_end=473
   _COMMAND._serialized_start=59
   _COMMAND._serialized_end=212
   _SOUND._serialized_start=214
-  _SOUND._serialized_end=249
-  _RESPONSE._serialized_start=251
-  _RESPONSE._serialized_end=277
-  _COMMANDER._serialized_start=441
-  _COMMANDER._serialized_end=516
+  _SOUND._serialized_end=283
+  _RESPONSE._serialized_start=285
+  _RESPONSE._serialized_end=311
+  _COMMANDER._serialized_start=475
+  _COMMANDER._serialized_end=550
 # @@protoc_insertion_point(module_scope)

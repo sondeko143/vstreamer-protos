@@ -37,12 +37,16 @@ class Response(_message.Message):
     def __init__(self, result: bool = ...) -> None: ...
 
 class Sound(_message.Message):
-    __slots__ = ["data", "rate"]
+    __slots__ = ["channels", "data", "format", "rate"]
+    CHANNELS_FIELD_NUMBER: _ClassVar[int]
     DATA_FIELD_NUMBER: _ClassVar[int]
+    FORMAT_FIELD_NUMBER: _ClassVar[int]
     RATE_FIELD_NUMBER: _ClassVar[int]
+    channels: int
     data: bytes
+    format: int
     rate: int
-    def __init__(self, data: _Optional[bytes] = ..., rate: _Optional[int] = ...) -> None: ...
+    def __init__(self, data: _Optional[bytes] = ..., rate: _Optional[int] = ..., format: _Optional[int] = ..., channels: _Optional[int] = ...) -> None: ...
 
 class Operation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
