@@ -5,7 +5,9 @@ from vstreamer_protos.commander import commander_pb2
 
 
 class CommanderStub(object):
-    def __init__(self, channel: grpc.Channel) -> None: ...
+    process_command: grpc.UnaryUnaryMultiCallable
+    def __init__(self, channel: Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+
 
 
 class CommanderServicer(object):
