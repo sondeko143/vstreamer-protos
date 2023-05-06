@@ -10,25 +10,40 @@ PLAYBACK: Operation
 RELOAD: Operation
 RESUME: Operation
 SET_FILTERS: Operation
-SPEECH: Operation
 SUBTITLE: Operation
 SUBTITLE_TRANSLATED: Operation
 TRANSCRIBE: Operation
 TRANSLATE: Operation
+TTS: Operation
+VC: Operation
 
 class Command(_message.Message):
-    __slots__ = ["file_path", "filters", "operations", "sound", "text"]
+    __slots__ = ["chains", "file_path", "filters", "sound", "text"]
+    CHAINS_FIELD_NUMBER: _ClassVar[int]
     FILE_PATH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
-    OPERATIONS_FIELD_NUMBER: _ClassVar[int]
     SOUND_FIELD_NUMBER: _ClassVar[int]
     TEXT_FIELD_NUMBER: _ClassVar[int]
+    chains: _containers.RepeatedCompositeFieldContainer[OperationChain]
     file_path: str
     filters: _containers.RepeatedScalarFieldContainer[str]
-    operations: _containers.RepeatedScalarFieldContainer[Operation]
     sound: Sound
     text: str
-    def __init__(self, operations: _Optional[_Iterable[_Union[Operation, str]]] = ..., sound: _Optional[_Union[Sound, _Mapping]] = ..., text: _Optional[str] = ..., file_path: _Optional[str] = ..., filters: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, chains: _Optional[_Iterable[_Union[OperationChain, _Mapping]]] = ..., sound: _Optional[_Union[Sound, _Mapping]] = ..., text: _Optional[str] = ..., file_path: _Optional[str] = ..., filters: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class OperationChain(_message.Message):
+    __slots__ = ["operations"]
+    OPERATIONS_FIELD_NUMBER: _ClassVar[int]
+    operations: _containers.RepeatedCompositeFieldContainer[OperationRoute]
+    def __init__(self, operations: _Optional[_Iterable[_Union[OperationRoute, _Mapping]]] = ...) -> None: ...
+
+class OperationRoute(_message.Message):
+    __slots__ = ["operation", "remote"]
+    OPERATION_FIELD_NUMBER: _ClassVar[int]
+    REMOTE_FIELD_NUMBER: _ClassVar[int]
+    operation: Operation
+    remote: str
+    def __init__(self, operation: _Optional[_Union[Operation, str]] = ..., remote: _Optional[str] = ...) -> None: ...
 
 class Response(_message.Message):
     __slots__ = ["result"]

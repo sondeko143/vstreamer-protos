@@ -4,6 +4,7 @@ package voicerecog;
 
 service Commander {
     rpc process_command (Command) returns (Response) {}
+    rpc sync_process_command (Command) returns (Response) {}
 }
 
 enum Operation {
@@ -11,16 +12,17 @@ enum Operation {
     TRANSLATE = 1;
     SUBTITLE = 2;
     SUBTITLE_TRANSLATED = 3;
-    SPEECH = 4;
-    PLAYBACK = 5;
-    PAUSE = 6;
-    RESUME = 7;
-    RELOAD = 8;
-    SET_FILTERS = 9;
+    TTS = 4;
+    VC = 5;
+    PLAYBACK = 6;
+    PAUSE = 7;
+    RESUME = 8;
+    RELOAD = 9;
+    SET_FILTERS = 10;
 }
 
 message Command {
-    repeated Operation operations = 1;
+    repeated OperationChain chains = 1;
     oneof operand {
         Sound sound = 2;
         string text = 3;
@@ -36,6 +38,16 @@ message Sound {
     int32 channels = 4;
 }
 
+message OperationChain {
+    repeated OperationRoute operations = 1;
+}
+
+message OperationRoute {
+    Operation operation = 1;
+    string remote = 2;
+}
+
 message Response {
     bool result = 1;
 }
+
