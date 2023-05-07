@@ -13,25 +13,25 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*vstreamer_protos/commander/commander.proto\x12\nvoicerecog\"\x9a\x01\n\x07\x43ommand\x12*\n\x06\x63hains\x18\x01 \x03(\x0b\x32\x1a.voicerecog.OperationChain\x12\"\n\x05sound\x18\x02 \x01(\x0b\x32\x11.voicerecog.SoundH\x00\x12\x0e\n\x04text\x18\x03 \x01(\tH\x00\x12\x13\n\tfile_path\x18\x04 \x01(\tH\x00\x12\x0f\n\x07\x66ilters\x18\x05 \x03(\tB\t\n\x07operand\"E\n\x05Sound\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x0c\n\x04rate\x18\x02 \x01(\x05\x12\x0e\n\x06\x66ormat\x18\x03 \x01(\x05\x12\x10\n\x08\x63hannels\x18\x04 \x01(\x05\"@\n\x0eOperationChain\x12.\n\noperations\x18\x01 \x03(\x0b\x32\x1a.voicerecog.OperationRoute\"J\n\x0eOperationRoute\x12(\n\toperation\x18\x01 \x01(\x0e\x32\x15.voicerecog.Operation\x12\x0e\n\x06remote\x18\x02 \x01(\t\"\x1a\n\x08Response\x12\x0e\n\x06result\x18\x01 \x01(\x08*\xa4\x01\n\tOperation\x12\x0e\n\nTRANSCRIBE\x10\x00\x12\r\n\tTRANSLATE\x10\x01\x12\x0c\n\x08SUBTITLE\x10\x02\x12\x17\n\x13SUBTITLE_TRANSLATED\x10\x03\x12\x07\n\x03TTS\x10\x04\x12\x06\n\x02VC\x10\x05\x12\x0c\n\x08PLAYBACK\x10\x06\x12\t\n\x05PAUSE\x10\x07\x12\n\n\x06RESUME\x10\x08\x12\n\n\x06RELOAD\x10\t\x12\x0f\n\x0bSET_FILTERS\x10\n2\x90\x01\n\tCommander\x12>\n\x0fprocess_command\x12\x13.voicerecog.Command\x1a\x14.voicerecog.Response\"\x00\x12\x43\n\x14sync_process_command\x12\x13.voicerecog.Command\x1a\x14.voicerecog.Response\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*vstreamer_protos/commander/commander.proto\x12\nvoicerecog\"\x89\x01\n\x07\x43ommand\x12*\n\x06\x63hains\x18\x01 \x03(\x0b\x32\x1a.voicerecog.OperationChain\x12 \n\x05sound\x18\x02 \x01(\x0b\x32\x11.voicerecog.Sound\x12\x0c\n\x04text\x18\x03 \x01(\t\x12\x11\n\tfile_path\x18\x04 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x05 \x03(\t\"E\n\x05Sound\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x0c\n\x04rate\x18\x02 \x01(\x05\x12\x0e\n\x06\x66ormat\x18\x03 \x01(\x05\x12\x10\n\x08\x63hannels\x18\x04 \x01(\x05\"@\n\x0eOperationChain\x12.\n\noperations\x18\x01 \x03(\x0b\x32\x1a.voicerecog.OperationRoute\"J\n\x0eOperationRoute\x12(\n\toperation\x18\x01 \x01(\x0e\x32\x15.voicerecog.Operation\x12\x0e\n\x06remote\x18\x02 \x01(\t\"\x1a\n\x08Response\x12\x0e\n\x06result\x18\x01 \x01(\x08*\xa4\x01\n\tOperation\x12\x0e\n\nTRANSCRIBE\x10\x00\x12\r\n\tTRANSLATE\x10\x01\x12\x0c\n\x08SUBTITLE\x10\x02\x12\x17\n\x13SUBTITLE_TRANSLATED\x10\x03\x12\x07\n\x03TTS\x10\x04\x12\x06\n\x02VC\x10\x05\x12\x0c\n\x08PLAYBACK\x10\x06\x12\t\n\x05PAUSE\x10\x07\x12\n\n\x06RESUME\x10\x08\x12\n\n\x06RELOAD\x10\t\x12\x0f\n\x0bSET_FILTERS\x10\n2\x90\x01\n\tCommander\x12>\n\x0fprocess_command\x12\x13.voicerecog.Command\x1a\x14.voicerecog.Response\"\x00\x12\x43\n\x14sync_process_command\x12\x13.voicerecog.Command\x1a\x14.voicerecog.Response\"\x00\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'vstreamer_protos.commander.commander_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _OPERATION._serialized_start=457
-  _OPERATION._serialized_end=621
+  _OPERATION._serialized_start=440
+  _OPERATION._serialized_end=604
   _COMMAND._serialized_start=59
-  _COMMAND._serialized_end=213
-  _SOUND._serialized_start=215
-  _SOUND._serialized_end=284
-  _OPERATIONCHAIN._serialized_start=286
-  _OPERATIONCHAIN._serialized_end=350
-  _OPERATIONROUTE._serialized_start=352
-  _OPERATIONROUTE._serialized_end=426
-  _RESPONSE._serialized_start=428
-  _RESPONSE._serialized_end=454
-  _COMMANDER._serialized_start=624
-  _COMMANDER._serialized_end=768
+  _COMMAND._serialized_end=196
+  _SOUND._serialized_start=198
+  _SOUND._serialized_end=267
+  _OPERATIONCHAIN._serialized_start=269
+  _OPERATIONCHAIN._serialized_end=333
+  _OPERATIONROUTE._serialized_start=335
+  _OPERATIONROUTE._serialized_end=409
+  _RESPONSE._serialized_start=411
+  _RESPONSE._serialized_end=437
+  _COMMANDER._serialized_start=607
+  _COMMANDER._serialized_end=751
 # @@protoc_insertion_point(module_scope)

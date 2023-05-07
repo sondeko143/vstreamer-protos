@@ -23,11 +23,9 @@ enum Operation {
 
 message Command {
     repeated OperationChain chains = 1;
-    oneof operand {
-        Sound sound = 2;
-        string text = 3;
-        string file_path = 4;
-    }
+    Sound sound = 2;
+    string text = 3;
+    string file_path = 4;
     repeated string filters = 5;
 }
 
