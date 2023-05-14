@@ -23,15 +23,17 @@ jobs:
         uses: abatilo/actions-poetry@v2
         with:
           poetry-version: ${{ matrix.poetry-version }}
-      - name: Create venv by poetry init 
+      - name: Create venv by poetry init
+        working-directory: python
         run: poetry install
       - name: Build 
+        working-directory: python
         run: poetry build
       - uses: xresloader/upload-to-github-release@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          file: "dist/*.whl"
+          file: "python/dist/*.whl"
           branches: "main;dev"
           verbose: true
           prerelease: true

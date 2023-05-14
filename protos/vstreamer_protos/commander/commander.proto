@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package voicerecog;
+option go_package = "github.com/sondeko143/vstreamer-protos/go";
 
 service Commander {
     rpc process_command (Command) returns (Response) {}
