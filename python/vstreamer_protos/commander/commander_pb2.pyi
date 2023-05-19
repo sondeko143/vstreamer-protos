@@ -6,6 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 PAUSE: Operation
+PING: Operation
 PLAYBACK: Operation
 RELOAD: Operation
 RESUME: Operation
