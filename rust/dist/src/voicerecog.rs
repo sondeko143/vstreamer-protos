@@ -17,8 +17,8 @@ pub struct Command {
 pub struct Sound {
     #[prost(bytes = "vec", tag = "1")]
     pub data: ::prost::alloc::vec::Vec<u8>,
-    #[prost(int32, tag = "2")]
-    pub rate: i32,
+    #[prost(uint32, tag = "2")]
+    pub rate: u32,
     #[prost(int32, tag = "3")]
     pub format: i32,
     #[prost(int32, tag = "4")]

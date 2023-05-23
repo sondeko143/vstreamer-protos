@@ -33,7 +33,7 @@ message Command {
 
 message Sound {
     bytes data = 1;
-    int32 rate = 2;
+    uint32 rate = 2;
     int32 format = 3;
     int32 channels = 4;
 }
