@@ -4,12 +4,18 @@ pub struct Command {
     #[prost(message, repeated, tag = "1")]
     pub chains: ::prost::alloc::vec::Vec<OperationChain>,
     #[prost(message, optional, tag = "2")]
+    pub operand: ::core::option::Option<Operand>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Operand {
+    #[prost(message, optional, tag = "1")]
     pub sound: ::core::option::Option<Sound>,
-    #[prost(string, tag = "3")]
+    #[prost(string, tag = "2")]
     pub text: ::prost::alloc::string::String,
-    #[prost(string, tag = "4")]
+    #[prost(string, tag = "3")]
     pub file_path: ::prost::alloc::string::String,
-    #[prost(string, repeated, tag = "5")]
+    #[prost(string, repeated, tag = "4")]
     pub filters: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -37,6 +43,16 @@ pub struct OperationRoute {
     pub operation: i32,
     #[prost(string, tag = "2")]
     pub remote: ::prost::alloc::string::String,
+    #[prost(message, optional, tag = "3")]
+    pub queries: ::core::option::Option<Queries>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Queries {
+    #[prost(string, tag = "1")]
+    pub target_language_code: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub source_language_code: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

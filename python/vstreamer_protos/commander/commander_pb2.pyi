@@ -19,18 +19,24 @@ TTS: Operation
 VC: Operation
 
 class Command(_message.Message):
-    __slots__ = ["chains", "file_path", "filters", "sound", "text"]
+    __slots__ = ["chains", "operand"]
     CHAINS_FIELD_NUMBER: _ClassVar[int]
+    OPERAND_FIELD_NUMBER: _ClassVar[int]
+    chains: _containers.RepeatedCompositeFieldContainer[OperationChain]
+    operand: Operand
+    def __init__(self, chains: _Optional[_Iterable[_Union[OperationChain, _Mapping]]] = ..., operand: _Optional[_Union[Operand, _Mapping]] = ...) -> None: ...
+
+class Operand(_message.Message):
+    __slots__ = ["file_path", "filters", "sound", "text"]
     FILE_PATH_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     SOUND_FIELD_NUMBER: _ClassVar[int]
     TEXT_FIELD_NUMBER: _ClassVar[int]
-    chains: _containers.RepeatedCompositeFieldContainer[OperationChain]
     file_path: str
     filters: _containers.RepeatedScalarFieldContainer[str]
     sound: Sound
     text: str
-    def __init__(self, chains: _Optional[_Iterable[_Union[OperationChain, _Mapping]]] = ..., sound: _Optional[_Union[Sound, _Mapping]] = ..., text: _Optional[str] = ..., file_path: _Optional[str] = ..., filters: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, sound: _Optional[_Union[Sound, _Mapping]] = ..., text: _Optional[str] = ..., file_path: _Optional[str] = ..., filters: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class OperationChain(_message.Message):
     __slots__ = ["operations"]
@@ -39,12 +45,22 @@ class OperationChain(_message.Message):
     def __init__(self, operations: _Optional[_Iterable[_Union[OperationRoute, _Mapping]]] = ...) -> None: ...
 
 class OperationRoute(_message.Message):
-    __slots__ = ["operation", "remote"]
+    __slots__ = ["operation", "queries", "remote"]
     OPERATION_FIELD_NUMBER: _ClassVar[int]
+    QUERIES_FIELD_NUMBER: _ClassVar[int]
     REMOTE_FIELD_NUMBER: _ClassVar[int]
     operation: Operation
+    queries: Queries
     remote: str
-    def __init__(self, operation: _Optional[_Union[Operation, str]] = ..., remote: _Optional[str] = ...) -> None: ...
+    def __init__(self, operation: _Optional[_Union[Operation, str]] = ..., remote: _Optional[str] = ..., queries: _Optional[_Union[Queries, _Mapping]] = ...) -> None: ...
+
+class Queries(_message.Message):
+    __slots__ = ["source_language_code", "target_language_code"]
+    SOURCE_LANGUAGE_CODE_FIELD_NUMBER: _ClassVar[int]
+    TARGET_LANGUAGE_CODE_FIELD_NUMBER: _ClassVar[int]
+    source_language_code: str
+    target_language_code: str
+    def __init__(self, target_language_code: _Optional[str] = ..., source_language_code: _Optional[str] = ...) -> None: ...
 
 class Response(_message.Message):
     __slots__ = ["result"]
