@@ -43,16 +43,11 @@ pub struct OperationRoute {
     pub operation: i32,
     #[prost(string, tag = "2")]
     pub remote: ::prost::alloc::string::String,
-    #[prost(message, optional, tag = "3")]
-    pub queries: ::core::option::Option<Queries>,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Queries {
-    #[prost(string, tag = "1")]
-    pub target_language_code: ::prost::alloc::string::String,
-    #[prost(string, tag = "2")]
-    pub source_language_code: ::prost::alloc::string::String,
+    #[prost(map = "string, string", tag = "3")]
+    pub queries: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::string::String,
+    >,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

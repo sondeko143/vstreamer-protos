@@ -49,12 +49,7 @@ message OperationChain {
 message OperationRoute {
     Operation operation = 1;
     string remote = 2;
-    Queries queries = 3;
-}
-
-message Queries {
-    string target_language_code = 1;
-    string source_language_code = 2;
+    map<string, string> queries = 3;
 }
 
 message Response {

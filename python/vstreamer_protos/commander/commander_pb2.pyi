@@ -46,21 +46,20 @@ class OperationChain(_message.Message):
 
 class OperationRoute(_message.Message):
     __slots__ = ["operation", "queries", "remote"]
+    class QueriesEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     OPERATION_FIELD_NUMBER: _ClassVar[int]
     QUERIES_FIELD_NUMBER: _ClassVar[int]
     REMOTE_FIELD_NUMBER: _ClassVar[int]
     operation: Operation
-    queries: Queries
+    queries: _containers.ScalarMap[str, str]
     remote: str
-    def __init__(self, operation: _Optional[_Union[Operation, str]] = ..., remote: _Optional[str] = ..., queries: _Optional[_Union[Queries, _Mapping]] = ...) -> None: ...
-
-class Queries(_message.Message):
-    __slots__ = ["source_language_code", "target_language_code"]
-    SOURCE_LANGUAGE_CODE_FIELD_NUMBER: _ClassVar[int]
-    TARGET_LANGUAGE_CODE_FIELD_NUMBER: _ClassVar[int]
-    source_language_code: str
-    target_language_code: str
-    def __init__(self, target_language_code: _Optional[str] = ..., source_language_code: _Optional[str] = ...) -> None: ...
+    def __init__(self, operation: _Optional[_Union[Operation, str]] = ..., remote: _Optional[str] = ..., queries: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class Response(_message.Message):
     __slots__ = ["result"]
