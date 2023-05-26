@@ -12,7 +12,6 @@ RELOAD: Operation
 RESUME: Operation
 SET_FILTERS: Operation
 SUBTITLE: Operation
-SUBTITLE_TRANSLATED: Operation
 TRANSCRIBE: Operation
 TRANSLATE: Operation
 TTS: Operation
