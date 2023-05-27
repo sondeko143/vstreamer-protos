@@ -3,8 +3,6 @@ ARTIFACTS=
 ARTIFACTS += vstreamer_protos/commander/commander_pb2.py
 ARTIFACTS += vstreamer_protos/commander/commander_pb2_grpc.py
 
-PYTHON ?= .venv/bin/python
-
 .PHONY: all
 all: ${ARTIFACTS}
 

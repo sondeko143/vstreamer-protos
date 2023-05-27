@@ -20,6 +20,7 @@ enum Operation {
     RELOAD = 8;
     SET_FILTERS = 9;
     PING = 10;
+    FORWARD = 11;
 }
 
 message Command {

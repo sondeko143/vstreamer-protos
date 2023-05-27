@@ -69,6 +69,7 @@ pub enum Operation {
     Reload = 8,
     SetFilters = 9,
     Ping = 10,
+    Forward = 11,
 }
 impl Operation {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -88,6 +89,7 @@ impl Operation {
             Operation::Reload => "RELOAD",
             Operation::SetFilters => "SET_FILTERS",
             Operation::Ping => "PING",
+            Operation::Forward => "FORWARD",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
@@ -104,6 +106,7 @@ impl Operation {
             "RELOAD" => Some(Self::Reload),
             "SET_FILTERS" => Some(Self::SetFilters),
             "PING" => Some(Self::Ping),
+            "FORWARD" => Some(Self::Forward),
             _ => None,
         }
     }

@@ -5,6 +5,7 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
+FORWARD: Operation
 PAUSE: Operation
 PING: Operation
 PLAYBACK: Operation
