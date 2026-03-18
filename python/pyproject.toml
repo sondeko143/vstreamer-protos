@@ -9,7 +9,7 @@ packages = [{include = "vstreamer_protos"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-protobuf = "^4.22.3"
+protobuf = "^5.29.6"
 grpcio = "^1.54.0"
 
 [tool.poetry.group.dev.dependencies]
