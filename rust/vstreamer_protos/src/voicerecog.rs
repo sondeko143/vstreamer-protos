@@ -17,6 +17,10 @@ pub struct Operand {
     pub file_path: ::prost::alloc::string::String,
     #[prost(string, repeated, tag = "4")]
     pub filters: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    #[prost(string, tag = "5")]
+    pub trace_id: ::prost::alloc::string::String,
+    #[prost(double, tag = "6")]
+    pub origin_ts: f64,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
