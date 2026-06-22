@@ -33,6 +33,8 @@ message Operand {
     string text = 2;
     string file_path = 3;
     repeated string filters = 4;
+    string trace_id = 5;
+    double origin_ts = 6;
 }
 
 message Sound {
